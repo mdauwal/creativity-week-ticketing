@@ -5,36 +5,164 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Book Ticket - Creativity Week</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="images/apple-touch-icon.png" type="image/x-icon">
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init(""); // Replace with your actual user ID
-  })();
-</script>
+  <style>
+    :root {
+      --green: #06D001;
+      --light-green: #b6ffb0;
+      --bg: #f9fff5;
+      --text-dark: #222;
+      --text-light: #fff;
+      --input-border: #ccc;
+    }
 
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0ffe7 0%, #f9f9f9 100%);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: url('images/image5.jpeg') center/cover no-repeat;
+      padding: 4rem 1rem 3rem;
+      text-align: center;
+      color: var(--text-light);
+      position: relative;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(6, 208, 1, 0.45);
+      z-index: 0;
+    }
+
+    header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 2.5rem;
+      margin: 0;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .form-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      max-width: 500px;
+      width: 100%;
+      animation: fadeIn 1s ease-out;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--green);
+    }
+
+    input {
+      padding: 0.75rem;
+      border: 1px solid var(--input-border);
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 2px #06d00133;
+      outline: none;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, var(--green) 60%, var(--light-green));
+      color: var(--text-dark);
+      font-weight: bold;
+      padding: 0.8rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+      background: var(--green);
+      color: #fff;
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .form-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>🎨 Creativity Week 2025</h1>
-    <p class="tagline">Unleash your imagination. Secure your seat now!</p>
+    <h1>Book Your Free Ticket</h1>
   </header>
 
-  <main class="container">
-    <form id="ticket-form" aria-label="Ticket Booking Form">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required placeholder="Jane Doe" />
+  <main>
+    <div class="form-card">
+      <form id="ticket-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Jane Doe" required />
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="your@example.com" required />
 
-      <button type="submit" class="btn">🎫 Get My Ticket</button>
-    </form>
+        <label for="ticket-count">Number of Tickets</label>
+        <input type="number" id="ticket-count" name="ticket-count" min="1" max="1000000000" value="1" required />
+
+        <button type="submit" class="btn">🎟 Get My Ticket</button>
+      </form>
+    </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Digital Literacy Team</p>
+    <p>&copy; 2025 Digital Literacy Team ISIA</p>
   </footer>
+
   <script src="js/script.js"></script>
 </body>
 </html>

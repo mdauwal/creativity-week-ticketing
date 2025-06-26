@@ -3,33 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Creativity Week 2025</title>
+  <title>Creativity Week</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="images/apple-touch-icon.png" type="image/x-icon">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0ffe7 0%, #f9f9f9 100%);
+      min-height: 100vh;
+    }
+    .hero {
+      background: url('images/image5.jpeg') center/cover no-repeat;
+      padding: 3rem 1rem 5rem 1rem;
+      text-align: center;
+      color: #fff;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; top: 0; bottom: 0;
+      background: rgba(6,208,1,0.45);
+      z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .logo-bounce { animation: bounce 2s infinite alternate; }
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
+    }
+    .tagline {
+      font-style: italic;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #eaffd0;
+      text-shadow: 0 2px 8px #0002;
+    }
+    .gallery {
+      display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 2rem 0 1rem 0;
+    }
+    .gallery img {
+      width: 120px; height: 80px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 10px #0001;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery img:hover { transform: scale(1.09) rotate(-2deg); box-shadow: 0 8px 24px #0003; }
+    .event-info {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px #0001;
+      margin-bottom: 2rem;
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    .event-info h2 { color: #06D001; }
+    .event-icons { font-size: 2rem; margin-bottom: 1rem; }
+    .btn {
+      background: linear-gradient(90deg, #06D001 60%, #b6ffb0 100%);
+      color: #222;
+      border: none;
+      border-radius: 6px;
+      padding: 0.7rem 2rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #0001;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn:hover { background: #06D001; color: #fff; transform: scale(1.04); }
+    #ticket-booking {
+      background: #f6fff2;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px #06d00122;
+      padding: 1.5rem 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    #ticket-booking h2 { color: #06D001; }
+    footer {
+      text-align: center;
+      color: #555;
+      margin-top: 2rem;
+      padding-bottom: 1rem;
+    }
+  </style>
+   <link rel="icon" href="images/apple-touch-icon.png" type="image/x-icon">
 </head>
 <body>
-  <header>
-    <h1>I-Scholars Creativity Week 2025</h1>
-    <p class="tagline">Where imagination meets innovation!</p>
-  </header>
+  <div class="hero fade-in">
+    <div class="hero-content">
+      <img src="images/logo.png" alt="Creativity Week Logo" class="logo-bounce" style="height:80px; margin-bottom:10px;" />
+      <h1 style="font-size:2.5rem; margin-bottom:0.2em;">I-Scholars Creativity Week 2025</h1>
+      <div class="tagline">Where imagination meets innovation!</div>
+      <div style="margin-top:1.5rem;">
+        <a href="#ticket-booking" class="btn fade-in">🎟 Book Free Ticket</a>
+         
+      </div>
+    </div>
+  </div>
 
-  <main class="container">
+  <main class="container fade-in">
     <section class="event-info">
-      <h2>📅 Event Details</h2>
-      <p><strong>Date:</strong> Monday June 23 – Friday June 27, 2025</p>
-      <p><strong>Location:</strong> I-Scholars International Academy, Gwarinpa, Abuja</p>
+      <div class="event-icons">🎨 🛠️ 🤖 💡</div>
+      <h2>Event Details</h2>
+      <div class="gallery">
+        <img src="images/image1.jpeg" alt="Creativity" />
+        <img src="images/image2.jpeg" alt="Workshop" />
+        <img src="images/image3.jpeg" alt="Tech" />
+        <img src="images/image4.jpeg" alt="Design" />
+        <img src="images/image6.jpeg" alt="Fun" />
+      </div>
+      <p><strong>Date:</strong> Monday June 23 - Friday June 27, 2025</p>
+      <p><strong>Location:</strong> I-Scholars International Academy Gwarinpa, Abuja</p>
       <p>
-        A full week of creativity, design thinking, tech exhibitions, and hands-on workshops.
-        Free entry for all scholars, teachers, parents, and creativity enthusiasts!
+        Join us for a week filled with creativity, design thinking, tech exhibitions,
+        and hands-on workshops. Free entry for all scholars, teachers, parents and creativity enthusiasts!
       </p>
-      <a href="book.html" class="btn">🎟 Book Free Ticket</a>
+    </section>
+
+    <section id="ticket-booking" class="fade-in">
+      <h2>Book Tickets</h2>
+        <button type="submit" class="btn"><a href="book.html" class="booku">>Book Now</a></button>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Digital Literacy Team, ISIA</p>
+  <footer class="fade-in">
+    <p>&copy; 2025 Digital Literacy Team ISIA</p>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
